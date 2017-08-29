@@ -1,1 +1,1 @@
-# alpine-nginx-php56
+# alpine-apache-php56
