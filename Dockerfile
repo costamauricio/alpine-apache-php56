@@ -13,6 +13,7 @@ RUN sed -i -r 's/(LoadModule.*mod_mpm_prefork.so)/#\1/' /etc/apache2/httpd.conf
 RUN sed -i -r 's/#(LoadModule.*mod_mpm_event.so)/\1/' /etc/apache2/httpd.conf
 RUN sed -i -r 's/#(LoadModule.*mod_rewrite.so)/\1/' /etc/apache2/httpd.conf
 
+RUN echo "php_admin_value[date.timezone] = \"America/Sao_Paulo\"">>/usr/local/etc/php-fpm.d/www.conf
 RUN echo "php_admin_value[display_errors] = On">>/usr/local/etc/php-fpm.d/www.conf
 RUN echo "php_admin_value[error_reporting] = E_ALL & ~E_DEPRECATED">>/usr/local/etc/php-fpm.d/www.conf
 RUN echo "LoadModule slotmem_shm_module modules/mod_slotmem_shm.so">/etc/apache2/conf.d/slotmem_shm.conf
